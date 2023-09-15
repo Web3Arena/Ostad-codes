@@ -55,7 +55,7 @@ contract VotingContract {
     /// @notice Accepts donation to the contract and emits DonationReceived event
     /// @dev Requires donation to be more than 0 Ether
     function donate() external payable {
-        require(msg.value > 0, "You can't be a good person donating zero Ether.");
+        require(msg.value > 0, "You can not be a good person donating zero Ether.");
         emit DonationReceived(msg.sender, msg.value);
     }
 
