@@ -59,7 +59,7 @@ contract VotingContract {
         emit DonationReceived(msg.sender, msg.value);
     }
 
-    /// @notice Function to accept Ether transfer to the contract and emits DonationReceived event
+    /// @notice Function to accept Ether transfer to the contract
     receive() external payable {}
 
 }
