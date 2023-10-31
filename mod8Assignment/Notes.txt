@@ -1,0 +1,5 @@
+Deploying contracts with account: 0x5d1EfE6A55b69ee8480a8FCf7F4a2D18C100E34e
+FactoryStorage deployed to: 0x3b1B7Af751C36Ce127aa302851d05b756b64E80D
+TokenStorage deployed to: 0x56B66373bF960a5a169834a75a3CAF23BA69Ee09
+TokenFactory deployed to: 0xc4D0da9481A05537Ec70e16bFB7FDAB077408646
+TokenContract deployed to: 0x7bd05f929157De5897694946F973f03491398a5C
