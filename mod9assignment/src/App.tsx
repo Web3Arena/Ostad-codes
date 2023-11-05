@@ -4,6 +4,7 @@ import { ethers } from "ethers";
 import { useState } from "react";
 import { fetchBalance, getAccount } from "wagmi/actions";
 import { getNetwork, watchNetwork } from "@wagmi/core";
+import { useAccount } from "wagmi";
 
 function App() {
   const [balance, setBalance] = useState(0);
@@ -14,6 +15,7 @@ function App() {
     setNetwork(network?.chain?.name || "");
     setBalance(0);
   });
+  const { isConnected } = useAccount();
 
   const getBalance = async () => {
     const userBalance = await fetchBalance({
@@ -25,14 +27,18 @@ function App() {
   return (
     <>
       <ConnectButton />
-      <p>Account: {account?.address}</p>
-      <button style={{ marginTop: "50px" }} onClick={getBalance}>
-        Fetch Balance Manually
-      </button>
-      {balance && (
-        <p>
-          Balance: {balance} {network && chain?.nativeCurrency?.symbol}
-        </p>
+      {isConnected && (
+        <div>
+          <p>Account: {account?.address}</p>
+          <button style={{ marginTop: "50px" }} onClick={getBalance}>
+            Fetch Balance Manually
+          </button>
+          {balance && (
+            <p>
+              Balance: {balance} {network && chain?.nativeCurrency?.symbol}
+            </p>
+          )}
+        </div>
       )}
     </>
   );
